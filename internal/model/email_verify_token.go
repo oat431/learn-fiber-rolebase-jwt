@@ -1,0 +1,16 @@
+package model
+
+import (
+	"oat431/learn-fiber-rolebase-jwt/pkg/common"
+	"time"
+
+	"github.com/google/uuid"
+)
+
+type EmailVerifyToken struct {
+	common.BaseEntity
+
+	AuthID    uuid.UUID `db:"auth_id" json:"auth_id"`
+	Token     string    `db:"token" json:"token"`
+	ExpiresAt time.Time `db:"expires_at" json:"expires_at"`
+}
